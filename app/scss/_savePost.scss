@@ -1,0 +1,29 @@
+.posts-nav {
+  float: left;
+  width: 20vw;
+  height: 100vh;
+  display: inline-block;
+}
+
+.content {
+  float: right;
+  width: 70vw;
+  display: inline-block;
+  text-align: left;
+  margin-left: 10vw;
+  clear: right;
+  box-sizing: border-box;
+
+  .newPost {
+    text-align: left;
+    box-sizing: border-box;
+    input {
+      display: block;
+      margin: 1vh;
+      width: 20vw;
+    }
+    textarea {
+      width: 20vw;
+    }
+  }
+}

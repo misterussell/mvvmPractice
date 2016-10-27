@@ -6,6 +6,7 @@ import renderNewProfile from './views/saveProfile';
 import renderBlog from './views/blog';
 import renderBlogNav from './views/blog-nav';
 import renderSinglePost from './views/singlePost';
+import renderBookmarks from './views/bookmarkview';
 import BlogPosts from './collections/blogPosts';
 import UserProfile from './collections/profiles';
 
@@ -21,12 +22,14 @@ const Router = Backbone.Router.extend({
     'newPost'   : 'renderNewPost',
     'newProfile': 'renderNewProfile',
     'posts'     : 'renderBlog',
-    'posts/:id' : 'renderPost'
+    'posts/:id' : 'renderPost',
+    'bookmarks' : 'renderBookmarks'
   },
   renderHome: () => {
     content.empty();
   },
    renderNewPost: () => {
+    nav.empty();
     content.empty();
     content.append(renderNewPost(posts));
   },
@@ -45,6 +48,11 @@ const Router = Backbone.Router.extend({
     content.empty();
     nav.append(renderBlogNav(posts));
     content.append(renderSinglePost(posts));
+  },
+  renderBookmarks: () => {
+    nav.empty();
+    content.empty();
+    content.append(renderBookmarks);
   }
 });
 

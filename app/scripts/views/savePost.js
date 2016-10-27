@@ -2,9 +2,9 @@ import $ from 'jquery';
 
 function renderNewPost(postsDatabase) {
   const form = $(`
-    <form class="" action="index.html" method="post">
-      <input type="text" name="title" />
-      <textarea name="body"></textarea>
+    <form class="newPost" action="index.html" method="post">
+      <input type="text" name="title" placeholder="Post Title"/>
+      <textarea name="body" placeholder="Post Content"></textarea>
       <input type="submit" name="submit" value="Submit">
     </form>
   `);

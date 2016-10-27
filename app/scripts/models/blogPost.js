@@ -2,6 +2,8 @@ import Backbone from 'backbone';
 
 const postConfig = {
   idAttribute: '_id',
+  title: 'title',
+  body: 'body',
   defaults: {
     timestamp: new Date(),
   },
