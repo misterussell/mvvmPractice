@@ -8,7 +8,7 @@ function renderNewProfile(profileDatabase) {
       <input type="text" name="address" placeholder="Address" value="">
       <input type="tel" name="telephone" placeholder="Telephone" value="">
       <input type="text" name="creature" placeholder="Favorite Magical Creature" value="">
-      <input type="submit" name="name" value="Submit">
+      <input type="submit" class="submit" name="name" value="Submit">
     </form>
   `);
 

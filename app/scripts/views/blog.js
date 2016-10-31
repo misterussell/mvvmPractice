@@ -6,6 +6,7 @@ function renderBlog(posts) {
   posts.fetch({
     success: () => {
       posts.forEach((post, i, arr) => {
+        //should have used .get for these
         let singlePost = (`
           <li>
             <h1>${post.attributes.title}</h1>

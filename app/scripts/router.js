@@ -10,8 +10,9 @@ import renderBookmarks from './views/bookmarkview';
 import BlogPosts from './collections/blogPosts';
 import UserProfile from './collections/profiles';
 
+const mainNav = ('.main');
 const content = $('.content');
-const nav = $('.posts-nav');
+const postNav = $('.posts-nav');
 
 let posts = new BlogPosts();
 let profiles = new UserProfile();
@@ -27,30 +28,34 @@ const Router = Backbone.Router.extend({
   },
   renderHome: () => {
     content.empty();
+    postNav.hide();
+    content.append(`<h1>Welmome to the magical blog.</h1>`);
   },
    renderNewPost: () => {
-    nav.empty();
     content.empty();
+    postNav.hide();
     content.append(renderNewPost(posts));
   },
   renderNewProfile: () => {
     content.empty();
+    postNav.hide();
     content.append(renderNewProfile(profiles));
   },
   renderBlog: () => {
-    nav.empty();
     content.empty();
-    nav.append(renderBlogNav(posts));
+    postNav.empty();
+    postNav.show();
+    postNav.append(renderBlogNav(posts));
     content.append(renderBlog(posts));
   },
   renderPost: () => {
-    nav.empty();
     content.empty();
-    nav.append(renderBlogNav(posts));
+    postNav.show();
+    postNav.empty();
+    postNav.append(renderBlogNav(posts));
     content.append(renderSinglePost(posts));
   },
   renderBookmarks: () => {
-    nav.empty();
     content.empty();
     content.append(renderBookmarks);
   }
